@@ -29,7 +29,7 @@ public class InstructorDetail {
 
     // add new field for instructor (also add getter and setter methods)
     // add one-to-one to the instructor field
-    @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "instructorDetail", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private Instructor instructor;
 
     public InstructorDetail() {
